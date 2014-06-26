@@ -9,5 +9,5 @@
 
 </strong></p>
 <%= link_to "Back", tadpoles_path%> 
-<a href="/tadpoles/<%= @tadpole.id %>/edit">Edit</a> | 
-<a href="/tadpoles/<%= @tadpole.id %>/destroy">Delete</a>
+<%= link_to "Edit", edit_tadpole_path(@tadpole) %>
+<%= link_to 'Delete', tadpole_path(@tadpole), method: "delete" %>

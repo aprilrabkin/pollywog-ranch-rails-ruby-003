@@ -1,6 +1,6 @@
 <h1><%= @frog.name %> Frog</h1>
 <p>Color: <%= @frog.color %></p>
-<p>Lives: <%= link_to @frog.pond.name, pond_path(@frog.name) %></p>
+<p>Lives: <%= link_to @frog.pond.name, pond_path(@frog.pond) %></p>
 <% if @frog.tadpoles.any? %>
   <h2>Children</h2>
   <ol>
