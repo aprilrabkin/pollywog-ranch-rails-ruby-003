@@ -1,0 +1,12 @@
+<h1>Create a new tadpole</h1>
+<%= form_for @tadpole do |f| %>
+  <%= f.text_field :name, placeholder: "Name..." %><br>
+  <%= f.text_field :color, placeholder: "Color..." %><br>
+  <%= f.hidden_field :frog_id, value: @frog.id  %>
+  <%= f.submit "Create" %><br>
+<% end %>
+
+
+
+<%= link_to "Cancel", tadpoles_path %>
+

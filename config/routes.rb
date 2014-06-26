@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :frogs do 
+    resources :tadpoles, only: :new
+  end
+  resources :tadpoles, except: :new do 
+    post '/evolve' => 'tadpoles#evolve' #evolve method should be in the model
+  end
+  resources :ponds
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

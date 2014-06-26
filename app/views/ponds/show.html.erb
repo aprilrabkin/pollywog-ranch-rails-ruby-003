@@ -1,0 +1,22 @@
+<h1><%= @pond.name %> Pond</h1>
+<p>Water type: <%= @pond.water_type %></p>
+<p>Resident frogs and their tadpoles:</p>
+<ul><% unless @pond.frogs.none? %>
+<h2>Frogs:</h2>
+<%@pond.frogs.each do |f| %>
+<li><%= link_to f.name, frog_path(f) %></li>
+<% end %>
+<% end %>
+<%@pond.frogs.each do |f| %>
+<% unless f.tadpoles.none? %>
+<h3><%=f.name%>'s tadpoles:</h3>
+<% f.tadpoles.each do |t| %>
+<li><%= link_to t.name, tadpole_path(t) %>
+</li>	
+<% end %>
+<% end %>
+<% end %></ul>
+<br>
+<%= link_to "Back", ponds_path %> 
+<%= link_to "Edit", edit_pond_path(@pond) %>
+<%= link_to "Delete", pond_path(@pond), method: "delete" %>

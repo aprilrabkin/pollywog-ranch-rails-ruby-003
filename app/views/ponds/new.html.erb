@@ -1,0 +1,9 @@
+<h1>Create a new pond</h1>
+<%= form_for @pond do |f| %>
+  <%= f.text_field :name, placeholder: "Name..." %><br>
+  <%= f.text_field :water_type, placeholder: "Water type..." %><br>
+  <%= f.submit "Create" %><br>
+<% end %>
+
+<%= link_to "Cancel", ponds_path %>
+

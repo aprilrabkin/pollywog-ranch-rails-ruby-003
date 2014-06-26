@@ -1,0 +1,11 @@
+<h1>Edit <%=@pond.name%></h1>
+<%= form_for @pond do |p| %>
+  <%= p.text_field :name, placeholder: "Name..." %><br>
+  <%= p.text_field :water_type, placeholder: "Water type..." %><br>
+  <%= p.submit "Edit" %><br>
+<% end %>
+
+
+
+<%= link_to "Cancel", ponds_path %>
+

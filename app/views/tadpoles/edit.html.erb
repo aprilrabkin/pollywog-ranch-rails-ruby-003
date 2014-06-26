@@ -1,0 +1,12 @@
+<h1>Edit <%=@tadpole.name%></h1>
+<%= form_for @tadpole do |f| %>
+  <%= f.text_field :name, placeholder: "Name..." %><br>
+  <%= f.text_field :color, placeholder: "Color..." %><br>
+  <%= f.submit "Edit" %><br>
+  <%= f.collection_select(:frog_id, @frogs, :id, :name) %>
+<% end %>
+
+
+
+<%= link_to "Cancel", tadpoles_path %>
+

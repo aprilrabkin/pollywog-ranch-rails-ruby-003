@@ -1,0 +1,16 @@
+<h1><%= @frog.name %> Frog</h1>
+<p>Color: <%= @frog.color %></p>
+<p>Lives: <%= link_to @frog.pond.name, pond_path(@frog.name) %></p>
+<% if @frog.tadpoles.any? %>
+  <h2>Children</h2>
+  <ol>
+    <% @frog.tadpoles.each do |t| %>
+      <li><%= link_to t.name, tadpole_path(t)%>
+    <% end %>
+  </ol><br>
+<% end %>
+<p><strong><%= link_to "Create a new tadpole baby", new_frog_tadpole_path(@frog) %></strong></p>
+
+<%= link_to "Back", frogs_path %> 
+<%= link_to "Edit", edit_frog_path(@frog) %>
+<%= link_to 'Delete', frog_path(@frog), method: "delete" %>
